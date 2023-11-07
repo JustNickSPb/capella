@@ -1,0 +1,14 @@
+version: '3'
+services:
+  capella-remote:
+    build: 
+      context: remote
+      args:
+        CAPELLA_VERSION: "6.1.0"
+    environment:
+      - RDP_EXTERNAL_PORT=3389
+      - RMT_PASSWORD=12345678
+    ports:
+      - "3389:3389"
+    volumes:
+      - "./workspace:/workspace"
